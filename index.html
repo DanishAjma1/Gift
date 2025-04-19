@@ -102,7 +102,7 @@
         background-color: #ff79b0;
         transform: scale(1.05);
       }
-      .No{
+      .No {
         display: none;
         position: absolute;
         top: 50%;
@@ -131,6 +131,103 @@
           transform: translate(-50%, -50%) rotate(-45deg) scale(1.05);
         }
       }
+      /* Add media query for responsiveness */
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+          padding: 10px;
+        }
+
+        .heart-container {
+          width: 300px;
+          height: 300px;
+        }
+
+        .heart {
+          width: 200px;
+          height: 200px;
+        }
+
+        .heart::before,
+        .heart::after {
+          width: 200px;
+          height: 200px;
+        }
+
+        .heart::before {
+          top: -100px;
+        }
+
+        .heart::after {
+          left: 100px;
+        }
+
+        .name {
+          font-size: 20px;
+          top: 45%;
+        }
+
+        .prays {
+          font-size: 14px;
+          top: 90%;
+        }
+
+        .question h1 {
+          font-size: 18px;
+          padding: 0 10px;
+        }
+
+        button {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+      }
+
+      /* Add media query for very small screens */
+      @media (max-width: 480px) {
+        .heart-container {
+          width: 250px;
+          height: 250px;
+        }
+
+        .heart {
+          width: 150px;
+          height: 150px;
+        }
+
+        .heart::before,
+        .heart::after {
+          width: 150px;
+          height: 150px;
+        }
+
+        .heart::before {
+          top: -75px;
+        }
+
+        .heart::after {
+          left: 75px;
+        }
+
+        .name {
+          font-size: 16px;
+          top: 30%;
+        }
+
+        .prays {
+          font-size: 12px;
+          top: 90%;
+        }
+
+        .question h1 {
+          font-size: 16px;
+        }
+
+        button {
+          font-size: 12px;
+          padding: 6px 12px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -145,12 +242,15 @@
       </div>
     </div>
     <div class="No">
-        <h1>You make me Sad..😔</h1>
-        <button onclick="hideNo()">Sorry</button>
+      <h1>You make me Sad..😔</h1>
+      <button onclick="hideNo()">Sorry</button>
     </div>
     <div class="heart-container">
       <div class="heart"></div>
-      <div class="name">HAPPY BIRTHDAY <br> MERi JAN!</div>
+      <div class="name">
+        HAPPY BIRTHDAY <br />
+        MERi JAN!
+      </div>
       <div class="prays">
         <h3>
           Allah Bless you with all the happiness and joy in this world and
