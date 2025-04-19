@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amna's Gift..😘</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to top right, #220044, #000000);
+        font-family: "Segoe UI", sans-serif;
+        overflow: hidden;
+      }
+
+      .heart-container {
+        display: none;
+        position: relative;
+        width: 400px;
+        height: 400px;
+      }
+
+      .heart {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 250px;
+        height: 250px;
+        background-color: red;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        animation: pulse 2s infinite;
+      }
+
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background-color: red;
+        border-radius: 50%;
+      }
+
+      .heart::before {
+        top: -125px;
+        left: 0;
+      }
+
+      .heart::after {
+        left: 125px;
+        top: 0;
+      }
+
+      .name {
+        position: absolute;
+        top: 35%;
+        white-space: nowrap;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 25px;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInOut 3s ease-in-out infinite both;
+        padding: 0 20px;
+      }
+      .prays {
+        position: absolute;
+        top: 100%;
+        text-align: center;
+        color: rgb(208, 208, 208);
+      }
+      .question {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      button {
+        background-color: #ff4081;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0 10px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      button:hover {
+        background-color: #ff79b0;
+        transform: scale(1.05);
+      }
+      .No{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+      }
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(-45deg) scale(1.05);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="question">
+      <h1>
+        💬 "Okay, I made something kind of cute… not sure if you’ll love it or
+        laugh at it — but I wanna show you anyway 😅 Wanna take a look?
+      </h1>
+      <div class="options">
+        <button id="yes" onclick="showHeart()">YES</button>
+        <button id="no" onclick="hideHeart()">NO</button>
+      </div>
+    </div>
+    <div class="No">
+        <h1>You make me Sad..😔</h1>
+        <button onclick="hideNo()">Sorry</button>
+    </div>
+    <div class="heart-container">
+      <div class="heart"></div>
+      <div class="name">HAPPY BIRTHDAY <br> MERi JAN!</div>
+      <div class="prays">
+        <h3>
+          Allah Bless you with all the happiness and joy in this world and
+          hereafter.
+        </h3>
+        <h3>May Allah bless you with you wished for....♥️</h3>
+      </div>
+    </div>
+  </body>
+  <script>
+    const button = document.querySelector("button");
+    const heartContainer = document.querySelector(".heart-container");
+    const question = document.querySelector(".question");
+    const NO = document.querySelector(".No");
+
+    function showHeart() {
+      heartContainer.style.display = "block";
+      question.style.display = "none";
+      setTimeout(() => {
+        heartContainer.querySelector(".name").style.opacity = 1;
+        heartContainer.querySelector(".prays").style.transition =
+          "fadeInOut 3s ease-in-out infinite both";
+      }, 1000);
+    }
+    function hideHeart() {
+      heartContainer.style.display = "none";
+      question.style.display = "none";
+      NO.style.display = "block";
+    }
+    function showNo() {
+      NO.style.display = "block";
+    }
+    function hideNo() {
+      NO.style.display = "none";
+      question.style.display = "block";
+    }
+  </script>
+</html>
