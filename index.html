@@ -66,12 +66,6 @@
         animation: fadeInOut 3s ease-in-out infinite both;
         padding: 0 20px;
       }
-      .prays {
-        position: absolute;
-        top: 100%;
-        text-align: center;
-        color: rgb(208, 208, 208);
-      }
       .question {
         position: absolute;
         top: 50%;
@@ -110,6 +104,9 @@
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
+      }
+      .heading {
+        font-size: 30px;
       }
       @keyframes fadeInOut {
         0% {
@@ -165,11 +162,6 @@
         .name {
           font-size: 20px;
           top: 45%;
-        }
-
-        .prays {
-          font-size: 14px;
-          top: 90%;
         }
 
         .question h1 {
@@ -232,10 +224,7 @@
   </head>
   <body>
     <div class="question">
-      <h1>
-        💬 "Okay, I made something kind of cute… not sure if you’ll love it or
-        laugh at it — but I wanna show you anyway 😅 Wanna take a look?
-      </h1>
+      <h1 class="heading">Are yo Amna..?</h1>
       <div class="options">
         <button id="yes" onclick="showHeart()">YES</button>
         <button id="no" onclick="hideHeart()">NO</button>
@@ -248,20 +237,12 @@
     <div class="heart-container">
       <div class="heart"></div>
       <div class="name">
-        HAPPY BIRTHDAY <br />
-        AMNA..♥️
-      </div>
-      <div class="prays">
-        <h3>
-          Allah Bless you with all the happiness and joy in this world and
-          hereafter.
-        </h3>
-        <h3>May Allah bless you with you wished for....♥️</h3>
+        I LOVE YOU<br />
+        MERI JAN..♥️
       </div>
     </div>
   </body>
   <script>
-    const button = document.querySelector("button");
     const heartContainer = document.querySelector(".heart-container");
     const question = document.querySelector(".question");
     const NO = document.querySelector(".No");
